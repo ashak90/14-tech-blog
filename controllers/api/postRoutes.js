@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { where } = require('sequelize/types');
 const Post = require('../../models/Post');
 const withAuth = require('../../utils/auth');
 
@@ -51,3 +50,5 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 
 });
+
+module.exports = router;
