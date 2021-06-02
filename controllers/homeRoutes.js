@@ -1,9 +1,11 @@
 const router = require('express').Router();
-const User = require('../models/User');
-const Post = require('../models/Post');
-const Comment = require('../models/Comment');
+// const User = require('../models/User');
+// const Post = require('../models/Post');
+// const Comment = require('../models/Comment');
+const { Post, Comment, User } = require('../models')
 
 router.get("/", async (req, res) => {
+    console.log("You hit the home route")
     try {
         const postData = await Post.findAll({
             include: [User],
@@ -13,6 +15,7 @@ router.get("/", async (req, res) => {
 
         res.render('all-posts', { posts })
     } catch (err) {
+        console.log()
         res.status(500).json(err);
     }
 });
