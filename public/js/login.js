@@ -1,6 +1,6 @@
 const loginBtn = document.getElementById('login-btn')
 
-loginBtn.addEventListener("click", async function () {
+loginBtn.addEventListener("click", async function (event) {
     event.preventDefault()
     const usernameEl = document.getElementById('username-input-login');
     const passwordEl = document.getElementById('password-input-login')
