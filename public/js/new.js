@@ -2,13 +2,13 @@ const newPostHandler = async function (event) {
     event.preventDefault();
     // console.log("you pressed the submit button")
     const title = document.querySelector('input[name ="post-title"]').value;
-    const body = document.querySelector('[name="post-body"]').value;
+    const content = document.querySelector('[name="post-content"]').value;
 
     await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify({
             title,
-            body
+            content
         }),
         headers: { 'Content-Type': 'application/json' },
     })
